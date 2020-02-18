@@ -1,0 +1,137 @@
+.projects-container {
+  .project-bg {
+    a {
+      .project {
+        width: 450px;
+        height: 400px;
+        position: relative;
+        background: black;
+        font-size: 20px;
+        border: 3px solid white;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        color: white;
+
+        // Transition hover -> non-hovered
+        transition: border-radius 300ms ease-in,
+        border 300ms ease-out,
+        left 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        top 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        transform 300ms ease-out !important;
+
+        .card {
+          width: 100%;
+          height: 100%;
+          &:hover {
+            div {
+              // TODO
+              // transition: background 1000ms ease-out !important;
+            }
+          }
+          div {
+            * {
+              // Label flipping
+              opacity: 0%;
+              position: absolute;
+              left: 0px;
+              top: 0px;
+            }
+
+            .label {
+              padding: 0px 30px;
+              opacity: 100%;
+              position: absolute;
+              left: 50%;
+              top: 43%;
+
+              display: flex;
+              flex-direction: column;
+              letter-spacing: .2em;
+              font-size: 32px;
+              width: 100%;
+              transform: translateX(-50%) translateY(-50px);
+
+              .title {
+                align-self: center;
+                text-align: center;
+              }
+
+              * {
+                opacity: 100%;
+                position: relative;
+              }
+
+              .subtitle {
+                align-self: center;
+                font-size: 14px;
+                letter-spacing: .04em;
+                text-align: center;
+                margin-top: 5px;
+              }
+
+              .tags {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 35px;
+                text-transform: uppercase;
+                letter-spacing: .05em;
+                line-height: 1em;
+                font-size: 14px;
+
+                .tag {
+                  border: 1px solid rgba(255, 255, 255, .4);
+                  padding: 10px 15px;
+                  margin-bottom: 8px;
+                }
+              }
+            }
+          }
+        }
+
+        &.moved:hover {
+          // Transition non-hovered -> hovered
+          transition: border-radius 700ms ease-in,
+          border 100ms ease-out 700ms,
+          left 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          top 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        &:hover {
+          z-index: 1;
+          border: 0px solid white;
+          border-radius: 40px;
+          // box-shadow: 8px 8px 50px 0px rgba(0,0,0,0.8);
+
+          // Transition non-hovered -> hovered
+          transition: border-radius 700ms ease-in,
+          border 100ms ease-out 700ms,
+          left 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          top 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          transform 300ms ease-out !important;
+
+          .project-content-hovered {
+            cursor: pointer;
+            div > * {
+              transition: transform 1000ms cubic-bezier(.99,.13,.47,2.01), opacity 300ms ease-in-out;
+              transform-style: preserve-3d;
+
+              // Label flipping
+              opacity: 100%;
+            }
+
+            // Label flipping
+            .label {
+              opacity: 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

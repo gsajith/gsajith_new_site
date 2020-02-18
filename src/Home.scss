@@ -1,0 +1,148 @@
+@import 'variables';
+
+.name {
+  line-height: 74.5%;
+  letter-spacing: 0.08em;
+  text-align: right;
+  position: relative;
+  right: -45px;
+  top: 15px;
+  transition: padding 300ms ease-in-out;
+}
+
+.last-name {
+  letter-spacing: 0.095em;
+  position: relative;
+  right: -4.5px;
+}
+
+#nav-container {
+  font-family: Krona One;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 74.5%;
+  letter-spacing: 0.095em;
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+}
+
+#name-container {
+  padding-bottom: 35px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  position: relative;
+}
+
+#resume-icon-container {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.resume-icon {
+  padding: 16px;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 300ms ease-in-out;
+  box-sizing: content-box;
+}
+
+#resume-icon-hover > .resume-icon {
+  z-index: 1;
+  background: black;
+  position: absolute;
+  overflow: hidden;
+  left: 140px;
+  top: 140px;
+  width: 0%;
+  height: 0%;
+}
+
+#resume-icon-hover > .resume-icon > img {
+  transition: 300ms ease-in-out;
+  position: relative;
+  top: -140px;
+  left: -140px;
+}
+
+#resume-icon-container:hover > #resume-icon-hover > .resume-icon > img {
+  top: 0px;
+  left: 0px;
+}
+
+#resume-icon-container:hover > #resume-icon-hover > .resume-icon {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  padding: 36px;
+}
+
+#resume-icon-container:hover > .resume-icon {
+  padding: 36px;
+}
+
+#resume-icon-container:hover {
+  cursor: pointer;
+}
+
+#name-hover {
+  position: absolute;
+  right: 0px;
+  z-index: 1;
+  color: white;
+  background: black;
+  padding-bottom: 36px;
+  overflow: hidden;
+  height: 100%;
+  width: 0%;
+  transition: padding 300ms ease-in-out, width 300ms ease-in-out;
+}
+
+#name-container:hover > #name-hover {
+  width: 100%;
+  cursor: pointer;
+}
+
+#name-container:hover > #name-hover > .name {
+  padding-right: 50px;
+}
+
+#name-container:hover > .name {
+  padding-right: 50px;
+}
+
+#name-hover > .name {
+  position: absolute;
+}
+
+.nav-item {
+  padding-right: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item-hover {
+  position: absolute;
+  height: 110%;
+  width: 0vw;
+  background: black;
+  color: white;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.nav-item-text {
+  transition: padding 300ms ease-in-out;
+}
+
+.nav-item:hover > .nav-item-hover {
+  width: 100%;
+  padding-left: 40px;
+}
+
+.nav-item:hover > .nav-item-text {
+  padding-left: 40px;
+}

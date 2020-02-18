@@ -1,0 +1,107 @@
+$plane1: 30px;
+$plane2: 45px;
+$plane3: 60px;
+$plane4: 100px;
+$plane5: 140px;
+$plane6: 180px;
+
+.project {
+  .card:hover {
+      .art-escape {
+        transition: background 300ms ease-out 700ms;
+        width: 100%;
+        height: 100%;
+        background: #F7E4DA;
+        border-radius: 40px;
+      }
+    }
+}
+
+.project.clicked {
+  .art-escape > * {
+    animation: none !important;
+    transition: transform 2000ms ease-out !important;
+    transform: translateZ(1000px) !important;
+  }
+}
+
+.project-content-hovered {
+  .art-escape {
+    .ground-back {
+      &.a {
+        transform: translateZ(5px);
+      }
+
+      &.b {
+        transform: translateZ(2px);
+      }
+
+      &.c {
+        transform: translateZ(1px);
+      }
+    }
+    .ground-middle {
+      &.a {
+        transform: translateZ($plane3);
+      }
+
+      &.b {
+        transform: translateZ($plane2);
+      }
+
+      &.c {
+        transform: translateZ($plane1);
+      }
+    }
+
+    .ground-front {
+      transform: translateZ($plane4);
+    }
+
+    .trees-back {
+      transform: translateZ(calc(#{$plane1} - 1px));
+    }
+
+    .trees-middle {
+      transform: translateZ(calc(#{$plane3} - 3px));
+    }
+
+    .trees-front {
+      transform: translateZ(calc(#{$plane4} - 10px));
+    }
+
+    .dinosaur {
+      left: 30px !important;
+      transform: translateZ($plane5);
+    }
+    .bench {
+      left: -15px !important;
+      transform: translateZ($plane6);
+    }
+    .title {
+      transform: translateZ($plane3);
+      animation: title-move 10s ease-in-out 1s infinite alternate;
+    }
+    @keyframes title-move {
+      from {transform: translateZ($plane3) translateX(0px)}
+      to {transform: translateZ($plane3) translateX(50px)}
+    }
+
+    .sun {
+      left: 100px !important;
+      top: 150px !important;
+      width: 58px;
+      height: 58px;
+      z-index: 1;
+      animation: sun-move 25s linear infinite;
+    }
+
+    // TODO: Move along circle
+    @keyframes sun-move {
+      0% {transform: translateX(-15px) translateY(40px)}
+      50% {transform: translateX(140px) translateY(-115px)}
+      80% {transform: translateX(285px) translateY(25px)}
+      100% {transform: translateX(285px) translateY(25px)}
+    }
+  }
+}

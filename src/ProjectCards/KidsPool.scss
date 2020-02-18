@@ -1,0 +1,76 @@
+$plane1: 30px;
+$plane2: 45px;
+$plane3: 60px;
+$plane4: 100px;
+$plane5: 140px;
+$plane6: 180px;
+
+.project {
+  .card:hover {
+      .kidspool {
+        transition: background 300ms ease-out 700ms;
+        width: 100%;
+        height: 100%;
+        background:  #674559;
+        border-radius: 40px;
+      }
+    }
+}
+
+.project-content-hovered {
+  .kidspool {
+    .rect {
+      transform: translateZ(1px);
+    }
+    .logo {
+      top: 97px !important;
+      left: unset !important;
+      right: -20px !important;
+      transform: translateZ($plane1);
+    }
+    .top-bar {
+      transform: translateZ(calc(#{$plane1} + 1px));
+    }
+    .message-glow {
+      left: unset !important;
+      right: -5px !important;
+      top: -12px !important;
+      transform: translateZ($plane1);
+    }
+
+    .bottom-sheet {
+      transform: translateZ($plane1);
+    }
+    .message-1 {
+      left: 0px !important;
+      top: 235px !important;
+      transform: translateZ(calc(#{$plane4} + 10px));
+    }
+    .message-2 {
+      left: -10px !important;
+      top: 290px !important;
+      transform: translateZ($plane4);
+    }
+    .driving-card {
+      left: -50px !important;
+      top: 50px !important;
+      transform: translateZ($plane5);
+    }
+    .car {
+      top: 94px !important;
+      left: unset !important;
+      right: 109px !important;
+      transform: translateZ($plane1);
+      animation: car-move 4s ease-out 1s infinite;
+    }
+    @keyframes car-move {
+      0% {transform: translateZ($plane1) translateX(0px) rotate3d(0, 1, 0, 0turn)}
+      44% {transform: translateZ($plane1) translateX(96px) rotate3d(0, 1, 0, 0turn)}
+      45% {transform: translateZ($plane1) translateX(96px) rotate3d(0, 1, 0, .3turn)}
+      50% {transform: translateZ($plane1) translateX(110px)rotate3d(0, 1, 0, .5turn)}
+      94% {transform: translateZ($plane1) translateX(8px) rotate3d(0, 1, 0, .5turn)}
+      95% {transform: translateZ($plane1) translateX(8px) rotate3d(0, 1, 0, .3turn)}
+      100% {transform: translateZ($plane1) translateX(0px) rotate3d(0, 1, 0, .0turn)}
+    }
+  }
+}

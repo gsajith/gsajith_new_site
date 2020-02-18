@@ -1,0 +1,103 @@
+$plane1: 30px;
+$plane2: 45px;
+$plane3: 60px;
+$plane4: 100px;
+$plane5: 140px;
+$plane6: 180px;
+
+.project {
+  .card:hover {
+      .resolution {
+        transition: background 300ms ease-out 700ms;
+        width: 100%;
+        height: 100%;
+        background: #262A45;
+        border-radius: 40px;
+      }
+    }
+}
+
+.project-content-hovered {
+  .resolution {
+    .title {
+      transform: translateZ(12px);
+    }
+
+    .sentiment-buttons {
+      top: 80px !important;
+      left: -5px !important;
+      transform: translateZ(12px);
+    }
+
+    .blue-shape {
+      transform: translateZ($plane1);
+    }
+
+    .graph {
+      left: unset !important;
+      right: 0px !important;
+      transform: translateZ(calc(#{$plane1} + 1px));
+    }
+
+    .graph-tooltip {
+      left: 235px !important;
+      top: 185px !important;
+      transform: translateZ($plane2);
+    }
+
+    .leak-alert {
+      left: unset !important;
+      top: unset !important;
+      right: 0px !important;
+      bottom: 0px !important;
+      transform: translateZ($plane4);
+    }
+
+    .new-device {
+      top: unset !important;
+      left: -30px !important;
+      bottom: 30px !important;
+      transform: translateZ($plane5);
+      animation: new-device-scale 2s ease-in-out 1s infinite;
+    }
+    @keyframes new-device-scale {
+      0% {transform: translateZ($plane5) scale(1)}
+      50% {transform: translateZ($plane5) scale(1.04)}
+      100% {transform: translateZ($plane5) scale(1)}
+    }
+
+    .pie-chart {
+      left: unset !important;
+      right: 0px !important;
+      transform: translateZ($plane2);
+      animation: chart-rotate 30s linear 1s infinite;
+    }
+    @keyframes chart-rotate {
+      0% {
+        transform: translateZ($plane2) rotate(0deg)
+      }
+      100% {
+        transform: translateZ($plane2) rotate(360deg)
+      }
+    }
+
+    .date-picker {
+      left: unset !important;
+      right: -20px !important;
+      top: 100px !important;
+      transform: translateZ($plane3);
+    }
+  }
+}
+
+@keyframes scale-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

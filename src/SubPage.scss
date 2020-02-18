@@ -1,0 +1,66 @@
+@import 'variables';
+
+.cursor-counter {
+  position: absolute;
+  top: 0px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  pointer-events: none;
+  transform: rotateY(-180deg) rotateZ(-90deg) translateX(60%) translateY(50%);
+}
+
+.cursor-counter circle {
+  stroke-dasharray: 113px;
+  stroke-dashoffset: -113px;
+  stroke-linecap: round;
+  stroke-width: 4px;
+  stroke: white;
+  fill: none;
+  animation: 700ms linear 0s 1 normal none running countdown;
+}
+@keyframes countdown {
+  from {
+    stroke-dashoffset: -113px;
+  }
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+
+.subpage {
+  background: black;
+  color: white;
+  height: 100vh;
+
+  .subpage-header {
+    position: relative;
+    top: -23px;
+    left: 40px;
+  }
+
+  .projects-container-wrapper {
+    width: 100%;
+    padding: 50px 10px 0px 50px;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: auto;
+
+    .project-bg {
+      margin: 0px 50px 30px 0px;
+      box-shadow: inset 0px 0px 0px 3px white;
+      width: 450px;
+      transition: opacity 700ms ease-in, transform 700ms ease-in-out;
+      // background:white;
+
+      &.transitioned {
+        opacity: 0%;
+      }
+    }
+  }
+}
