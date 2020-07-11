@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Card from './Card';
 
 import ArtEscape from './ProjectCards/ArtEscape';
+import Adulting from './ProjectCards/Adulting';
 import Resolution from './ProjectCards/Resolution';
 import KidsPool from './ProjectCards/KidsPool';
 import LuckyPeak from './ProjectCards/LuckyPeak';
@@ -39,6 +40,7 @@ export default function SubPage(props) {
   const [state, setState] = useState({
     cards: [
       { key: 'art-escape', hovered: false, timeout: null, positionLoop: null, content: <ArtEscape /> },
+      { key: 'adulting', hovered: false, timeout: null, positionLoop: null, content: <Adulting /> },
       { key: 'resolution', hovered: false, timeout: null, positionLoop: null, content: <Resolution /> },
       { key: 'kidspool', hovered: false, timeout: null, positionLoop: null, content: <KidsPool /> },
       { key: 'lucky-peak', hovered: false, timeout: null, positionLoop: null, content: <LuckyPeak /> },
@@ -74,9 +76,11 @@ export default function SubPage(props) {
     if (cursor != null) {
       tempCursor = cursor;
     } else {
-      tempCursor = document.getElementById("cursor")
-      tempCursor.style.setProperty("display", "");
-      setCursor(tempCursor);
+      tempCursor = document.getElementById("cursor");
+      if (tempCursor != null) {
+        tempCursor.style.setProperty("display", "");
+        setCursor(tempCursor);
+      }
     }
 
     if (!hovered) {
@@ -95,7 +99,7 @@ export default function SubPage(props) {
         cards: oldCards
       });
 
-      let cardElement = document.getElementById(card.key).childNodes[0];
+      let cardElement = document.getElementById(card.key).childNodes[0].childNodes[0];
       cardElement.style.setProperty("left", "0px");
       cardElement.style.setProperty("top", "0px");
       tempCursor.remove();
@@ -116,7 +120,7 @@ export default function SubPage(props) {
           cards: oldCards
         });
 
-        let cardElement = document.getElementById(card.key).childNodes[0];
+        let cardElement = document.getElementById(card.key).childNodes[0].childNodes[0];
         let rect = cardElement.getBoundingClientRect();
         let rectMidX = rect.left + rect.width / 2;
         let rectMidY = rect.top + rect.height / 2;
@@ -132,7 +136,7 @@ export default function SubPage(props) {
           cardElement.style.setProperty("left", (-1 * diffX) + "px");
           cardElement.style.setProperty("top", (-1 * diffY) + "px");
         }, 50, rectMidX, rectMidY);
-      }, 700)
+      }, 150)
     }
   }
 

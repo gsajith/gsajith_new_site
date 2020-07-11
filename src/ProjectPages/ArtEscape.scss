@@ -1,6 +1,318 @@
-.art-escape {
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+.art-escape-case-study {
+  background: #F7E4DA;
+  color: #4B5161;
   width: 100vw;
-  img {
-    width: 100%;
+
+  .top-content-container {
+    max-width: 80%;
+    margin: auto;
+
+    .page-title {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 7vw;
+      text-transform: uppercase;
+      color: #FB624E;
+      letter-spacing: 0.2em;
+      line-height: 1.2em;
+      text-align: center;
+      padding-top: 35vh;
+
+      @media only screen and (max-width: 500px) {
+          font-size: 10vw;
+      }
+    }
+
+    .page-subtitle {
+      font-family: Quicksand;
+      text-align: center;
+      font-style: normal;
+      font-weight: normal;
+      font-size: calc(16px + 1.1vw);
+      letter-spacing: 0.03em;
+
+      @media only screen and (max-width: 500px) {
+          font-size: 5vw;
+      }
+    }
+  }
+
+  .top-graphic {
+    padding-top: 20vh;
+    width: 100vw;
+  }
+
+  .phone {
+    width: 58vw;
+    transform: translateY(-43%);
+    @media only screen and (max-width: 500px) {
+      width: 80vw;
+      transform: translateY(-20%) translateX(-20%);
+    }
+  }
+
+  .demo-pic-1 {
+    width: 42vw;
+    position: absolute;
+    right: -5vw;
+    top: calc(600px + 85vw);
+    float: right;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(12px + .9vw);
+    line-height: 106.18%;
+    text-align: right;
+    letter-spacing: 0.03em;
+
+    @media only screen and (max-width: 500px) {
+      width: 60vw;
+      position: absolute;
+      top: calc(400px + 190vw);
+    }
+
+    .demo-1-text {
+      width: 85%;
+      position: relative;
+    }
+  }
+
+  .intro-content-container {
+    width: 90vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: absolute;
+    top: calc(600px + 150vw);
+    justify-content: center;
+
+    @media only screen and (max-width: 500px) {
+      top: calc(400px + 290vw);
+    }
+
+    .solution-container.box {
+      max-width: 700px;
+      margin-bottom: 50px;
+      margin-right: 50px;
+      @media only screen and (max-width: 1200px) {
+        margin-right: 0px;
+      }
+    }
+    .roles-container.box {
+      max-width: 600px;
+
+      .body {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: none;
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          li:not(:last-child) {
+            margin-bottom: calc(8px + .4vw);
+          }
+        }
+
+        .names {
+          text-align: right;
+          font-weight: 800;
+          padding-right: 20px;
+        }
+      }
+    }
+
+    .box {
+      display: flex;
+      flex-direction: row;
+      background: #FDF6ED;
+      box-shadow: 2.25227px 4.50453px 18.0181px rgba(0, 0, 0, 0.15);
+      border-radius: 24px;
+      padding: 42px;
+      padding-left: 0px;
+
+      .header {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: calc(24px + 1vw);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+
+        color: #FF7C6B;
+        position: relative;
+        text-align: end;
+        line-height: 300%;
+      }
+
+      .body {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(12px + .5vw);
+        line-height: 123%;
+        letter-spacing: 0.03em;
+      }
+    }
+  }
+
+  .overview-container {
+    font-family: Montserrat;
+    font-size: calc(24px + 6vw);
+    line-height: 123.68%;
+    letter-spacing: 0.2em;
+    width: 110vw;
+    text-transform: uppercase;
+    background: #E6BFA8;
+    box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.15), inset 0px -4px 20px rgba(0, 0, 0, 0.1);
+    margin: none;
+    position: relative;
+    left: -5vw;
+    text-align: center;
+    padding: 40px 0px 50px 0px;
+
+    // I hate this.
+    @media only screen and (max-width: 1395px) {
+      top: calc(450px - 15vw);
+    }
+
+    @media only screen and (max-width: 750px) {
+      top: calc(550px - 10vw);
+    }
+
+    @media only screen and (max-width: 500px) {
+      top: calc(1300px - 85vw);
+    }
+
+    .overview-text-container {
+      font-size: 100px;
+      .overview-row {
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        position: relative;
+        left: -2vw;
+        min-height: 120px;
+
+        .overview-number {
+          color: #FDF6ED;
+          text-shadow: 8px 8px 0px #FF7C6B;
+          font-size: calc(24px + 6vw);
+          flex-basis: 20%;
+          line-height: .8;
+          position: relative;
+          right: -2vw;
+        }
+        .overview-text {
+          text-transform: none;
+          font-family: Quicksand;
+          font-size: calc(14px + .6vw);
+          line-height: 129.68%;
+          letter-spacing: 0.03em;
+
+          flex-basis: 80%;
+          align-self: flex-start;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .research-container {
+    background-image: url('./Resources/ArtEscape/Dark_bg.svg');
+    background-size: contain;
+    height: 187.5vw;
+    width: 100vw;
+    position: relative;
+    top: 200px;
+
+    @media only screen and (max-width: 1395px) {
+      top: 350px;
+    }
+
+    @media only screen and (max-width: 750px) {
+      top: 550px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      top: 900px;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      background: #FDF6ED;
+      box-shadow: 2.25227px 4.50453px 18.0181px rgba(0, 0, 0, 0.15);
+      border-radius: 24px;
+      padding: 42px;
+      max-width: 400px;
+      margin-left: 4vw;
+
+      .header {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: calc(24px + 1vw);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        padding-bottom: 30px;
+        color: #FF7C6B;
+        position: relative;
+        text-align: center;
+      }
+
+      .body {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(12px + .5vw);
+        line-height: 123%;
+        letter-spacing: 0.03em;
+        font-size: 24px;
+
+        .bulleted-list {
+          padding-bottom: 16px;
+          .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: none;
+            align-items: center;
+            margin-bottom: 16px;
+
+            .bullet {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              border-radius: 8px;
+              background: #FF7C6B;
+              margin-right: 16px;
+            }
+            .list-item {
+              display: inline-block;
+              font-family: Quicksand;
+              font-style: normal;
+              font-weight: bold;
+              line-height: 123.68%;
+              letter-spacing: 0.03em;
+            }
+          }
+        }
+      }
+    }
+
+    .intercepts-container {
+      background: blue;
+
+    }
   }
 }

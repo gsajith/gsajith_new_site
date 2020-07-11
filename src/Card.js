@@ -62,7 +62,7 @@ export default function Card(props) {
   }
 
   return (
-    <DelayLink to={"/projects/" + card.key} delay={1500} onDelayEnd={transitionToProjectPage}>
+    <DelayLink to={"/projects/" + card.key} delay={1} onDelayEnd={transitionToProjectPage}>
       <Tilt className={("project" + ' ' + (moved ? 'moved' : '') + ' ' + (clicked ? 'clicked' : ''))}
         onEnter={() => { props.callback(card, true) }}
         onLeave={() => { props.callback(card, false); setMoved(false); setClicked(false); }}
