@@ -50,6 +50,22 @@ export default function SubPage(props) {
     ]
   });
 
+  const [scaleAmount, setScaleAmount] = useState(1.0);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 550) {
+        setScaleAmount(window.innerWidth / 550);
+      } else {
+        setScaleAmount(1.0);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+  });
+
   const mouse = useRef(
     {
       x: 0,
@@ -165,7 +181,7 @@ export default function SubPage(props) {
         <div className="projects-container">
           {state.cards.map((card) => (
             (
-              <div key={card.key} id={card.key} className="project-bg transitioned">
+              <div key={card.key} id={card.key} className="project-bg transitioned" style={{ transform: "scale(" + scaleAmount + ")" }}>
                 <Card card={card} callback={projectHoverCallback} />
               </div>
             )
